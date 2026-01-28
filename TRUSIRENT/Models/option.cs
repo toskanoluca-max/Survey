@@ -1,5 +1,3 @@
-﻿using YourApp.Models;
-
 namespace TRUSIRENT.Models.Entities
 {
     public class Option
