@@ -1,0 +1,23 @@
+﻿@model TRUSIRENT.Models.Entities.Survey
+
+<h2>Wyniki: @Model.Title</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Opcja</th>
+            <th>Liczba głosów</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var option in Model.Options)
+        {
+            <tr>
+                <td>@option.Text</td>
+                <td>@option.Votes.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-action="Index">Powrót</a>

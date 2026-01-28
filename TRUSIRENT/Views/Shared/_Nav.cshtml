@@ -1,0 +1,50 @@
+﻿<nav class="navbar bg-body-tertiary">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+            <img src="~/Images/logo.png" alt="TRUSIRENT" style="width: 120px; height: auto;">
+        </a>
+
+        <ul class="navbar-nav d-flex flex-row justify-content-center align-items-center">
+
+            <li class="nav-item me-3">
+                <a class="nav-link"
+                   asp-controller="Home"
+                   asp-action="Index">
+                    GŁÓWNA
+                </a>
+            </li>
+
+            <li class="nav-item me-3">
+                <a class="nav-link"
+                   asp-controller="Vehicle"
+                   asp-action="List">
+                    POJAZDY
+                </a>
+            </li>
+
+            <vc:vehicle-type-menu></vc:vehicle-type-menu>
+
+            <li class="nav-item ms-3">
+                <a class="nav-link"
+                   asp-controller="Contact"
+                   asp-action="Index">
+                    KONTAKT
+                </a>
+            </li>
+        </ul>
+
+       
+        <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Szukaj pojazdu..." aria-label="Szukaj">
+            <button class="btn btn-outline-primary" type="submit">Szukaj</button>
+        </form>
+
+
+        <partial name="_LoginPartial" />
+
+
+        <vc:rental-cart-summary></vc:rental-cart-summary>
+
+    </div>
+</nav>

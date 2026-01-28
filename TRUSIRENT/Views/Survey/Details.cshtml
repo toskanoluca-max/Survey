@@ -1,0 +1,34 @@
+﻿@model TRUSIRENT.Models.Entities.Survey
+
+<h2>Nowa ankieta</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Tytuł ankiety</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <h4>Opcje odpowiedzi</h4>
+
+    <div id="options">
+        <input name="options" class="form-control mb-2" placeholder="Opcja 1" />
+        <input name="options" class="form-control mb-2" placeholder="Opcja 2" />
+    </div>
+
+    <button type="button" class="btn btn-secondary" onclick="addOption()">Dodaj opcję</button>
+
+    <br /><br />
+
+    <button type="submit" class="btn btn-success">Zapisz</button>
+</form>
+
+<script>
+    function addOption() {
+        const container = document.getElementById("options");
+        const input = document.createElement("input");
+        input.name = "options";
+        input.className = "form-control mb-2";
+        input.placeholder = "Nowa opcja";
+        container.appendChild(input);
+    }
+</script>

@@ -1,0 +1,17 @@
+﻿@model TRUSIRENT.Models.Entities.Survey
+
+<h2>@Model.Title</h2>
+
+<ul class="list-group">
+    @foreach (var option in Model.Options)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @option.Text
+            <a class="btn btn-primary" asp-action="Vote" asp-route-optionId="@option.OptionId">Głosuj</a>
+        </li>
+    }
+</ul>
+
+<br />
+
+<a class="btn btn-secondary" asp-action="Results" asp-route-id="@Model.SurveyId">Zobacz wyniki</a>

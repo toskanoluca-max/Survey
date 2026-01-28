@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TRUSIRENT.Models.Entities.Survey>
+
+<h2>Lista ankiet</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Dodaj ankietę</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var survey in Model)
+        {
+            <tr>
+                <td>@survey.Title</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@survey.SurveyId">Szczegóły</a>
+                    <a class="btn btn-secondary" asp-action="Results" asp-route-id="@survey.SurveyId">Wyniki</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
